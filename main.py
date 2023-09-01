@@ -44,10 +44,11 @@ if __name__ == "__main__":
         if ".xml" in file:
             data_files.append(file)
 
-    bound_list = parse_XML(os.path.join(data_dir, data_files[0]))
-
     # Create the output directory if it does not exist
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
-    draw(os.path.join(output_dir, data_files[0].replace(".xml", ".png")), os.path.join(data_dir, data_files[0].replace(".xml", ".png")), bound_list)
+    for file in data_files:
+        bound_list = parse_XML(os.path.join(data_dir, file))
+        img_path = file.replace(".xml", ".png")
+        draw(os.path.join(output_dir, img_path), os.path.join(data_dir, img_path), bound_list)
