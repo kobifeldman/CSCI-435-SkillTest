@@ -2,13 +2,13 @@ import os
 import re
 import xml.etree.ElementTree as ET
 
-def parse_XML(file: str) -> list:
+def parse_XML(file_path: str) -> list:
     """Parses a given XML file and returns a list of bounds for each UI element of the file."""
 
     def traverse(root: ET.Element):
         """Traverse all levels of the XML tree to find all nested node elements."""
 
-        if root:
+        if root is not None:
             if root.tag == "node":
                 bounds = root.attrib.get("bounds")
                 bounds = re.findall("\[(.*?)\]", bounds)
@@ -22,7 +22,7 @@ def parse_XML(file: str) -> list:
 
     bound_list = []
 
-    tree = ET.parse(file)
+    tree = ET.parse(file_path)
     root = tree.getroot()
   
     # Traverse all children in the XML structure
@@ -41,6 +41,4 @@ if __name__ == "__main__":
         if ".xml" in file:
             data_files.append(file)
 
-    parse_XML(os.path.join(data_directory, data_files[0]))
-    #for file in data_files:
-    #    bounds = parse_XML(file)
+    bound_list = parse_XML(os.path.join(data_directory, data_files[0]))
