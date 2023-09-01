@@ -35,13 +35,19 @@ def parse_XML(file_path: str) -> list:
 
 if __name__ == "__main__":
     data_files = []
-    data_directory = "Programming-Assignment-Data"
+    data_dir = "Programming-Assignment-Data"
+    output_dir = "output"
 
-    files = os.listdir(data_directory)
+    files = os.listdir(data_dir)
 
     for file in files:
         if ".xml" in file:
             data_files.append(file)
 
-    bound_list = parse_XML(os.path.join(data_directory, data_files[0]))
-    draw(os.path.join(data_directory, data_files[0].replace(".xml", ".png")), bound_list)
+    bound_list = parse_XML(os.path.join(data_dir, data_files[0]))
+
+    # Create the output directory if it does not exist
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
+    draw(os.path.join(output_dir, data_files[0].replace(".xml", ".png")), os.path.join(data_dir, data_files[0].replace(".xml", ".png")), bound_list)
