@@ -12,8 +12,19 @@ git clone https://github.com/kobifeldman/CSCI-435-SkillTest.git
 2. Create a virtual environment and install the necessary libraries:
 ```
 python -m venv venv
-venv\Scripts\activate.bat & REM Windows
-source venv/bin/activate & Unix/Mac
+```
+
+Windows:
+```
+venv\Scripts\activate.bat
+```
+
+Unix/Mac:
+```
+source venv/bin/activate
+```
+
+```
 pip install -r requirements.txt
 ```
 
