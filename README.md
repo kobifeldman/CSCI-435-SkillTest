@@ -14,7 +14,7 @@ git clone https://github.com/kobifeldman/CSCI-435-SkillTest.git
 python -m venv venv
 ```
 
-3. Activate the virtual environment:
+3. Activate the virtual environment:  
 Windows:
 ```
 venv\Scripts\activate.bat
