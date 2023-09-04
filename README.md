@@ -6,20 +6,20 @@ This tool recieves a set of corresponding XML and PNG files. The XML files descr
 
 ## Compile and Run the tool
 1. Clone the repository:
-'''
+```
 git clone https://github.com/kobifeldman/CSCI-435-SkillTest.git
-'''
+```
 2. Create a virtual environment and install the necessary libraries:
-'''
+```
 python -m venv venv
 venv\Scripts\activate.bat & REM Windows
 source venv/bin/activate & Unix/Mac
 pip install -r requirements.txt
-'''
+```
 
 3. Run the program:
-'''
+```
 python main.py
-'''
+```
 
 ## Credits
