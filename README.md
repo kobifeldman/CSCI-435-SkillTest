@@ -9,11 +9,12 @@ This tool recieves a set of corresponding XML and PNG files. The XML files descr
 ```
 git clone https://github.com/kobifeldman/CSCI-435-SkillTest.git
 ```
-2. Create a virtual environment and install the necessary libraries:
+2. Create a virtual environment:
 ```
 python -m venv venv
 ```
 
+3. Activate the virtual environment:
 Windows:
 ```
 venv\Scripts\activate.bat
@@ -24,11 +25,12 @@ Unix/Mac:
 source venv/bin/activate
 ```
 
+4. Install the necessary libraries:
 ```
 pip install -r requirements.txt
 ```
 
-3. Run the program:
+5. Run the program:
 ```
 python main.py
 ```
