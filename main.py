@@ -1,5 +1,4 @@
-import os
-import re
+import os, sys, getopt, re
 import xml.etree.ElementTree as ET
 
 from draw import draw
@@ -35,8 +34,18 @@ def parse_XML(file_path: str) -> list:
 
 if __name__ == "__main__":
     data_files = []
+
+    # Default input/output directories
     data_dir = "Programming-Assignment-Data"
     output_dir = "output"
+
+    # Read in command line arguments
+    opts, args = getopt.getopt(sys.argv[1:],"i:o:",["input=","output="])
+    for opt, arg in opts:
+        if opt in ("-i", "--input"):
+            data_dir = arg
+        elif opt in ("-o", "--output"):
+            output_dir = arg
 
     files = os.listdir(data_dir)
 

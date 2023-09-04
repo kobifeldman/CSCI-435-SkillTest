@@ -21,7 +21,7 @@ def draw_rectangle(image, bounds: list):
     line_type = cv2.LINE_8
     dash_length = 10
 
-    # **These two for loops were generated using ChatGPT**
+    # **These two for loops were generated using ChatGPT and modified by me.**
     # Draw horizontal dashes
     for x in range(x1, x2, dash_length * 2):
         image = cv2.line(image, (x, y1), (min(x + dash_length, x2), y1), color, thickness, line_type)

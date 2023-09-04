@@ -35,7 +35,10 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-5. Run the program:
+5. Run the program with or without command line arguments to specify the input and output files. If you do not use arguments, input will default to "Programming-Assignment-Data" and output will default to "output":
 ```
 python main.py
+```
+```
+python main.py -i Programming-Assignment-Data -o output
 ```
